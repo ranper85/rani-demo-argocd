@@ -16,7 +16,7 @@ spec:
     spec:                                                                 
       containers:                                                         
         - name: nginx                                                       
-          image: quay.io/kurs/demoserver-a:latest                                                 
+          image: quay.io/kurs/demoserver-b:latest                                                 
           ports:                                                            
           - containerPort: 5000                                              
           resources:                                                        
