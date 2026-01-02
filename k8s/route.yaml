@@ -1,0 +1,11 @@
+apiVersion: route.openshift.io/v1                                         
+kind: Route                                                               
+metadata:                                                                 
+  name: rani-argocd-demo                                                        
+  labels:                                                                 
+    app: rani-argocd-demo                                                       
+spec:                                                                     
+  to:                                                                     
+    kind: Service                                                         
+    name: rani-argocd-demo                                                      
+    weight: 100

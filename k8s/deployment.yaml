@@ -1,0 +1,28 @@
+apiVersion: apps/v1                                                       
+kind: Deployment                                                          
+metadata:                                                                 
+  name: rani-argocd-demo                                                        
+  labels:                                                                 
+    app: rani-argocd-demo                                                       
+spec:                                                                     
+  replicas: 2                                                             
+  selector:                                                               
+    matchLabels:                                                          
+      app: rani-argocd-demo                                                     
+  template:                                                               
+    metadata:                                                             
+      labels:                                                             
+        app: rani-argocd-demo                                                   
+    spec:                                                                 
+      containers:                                                         
+        - name: nginx                                                       
+          image: quay.io/kurs/demoserver-a:latest                                                 
+          ports:                                                            
+          - containerPort: 5000                                              
+          resources:                                                        
+            requests:                                                       
+              memory: "64Mi"                                                
+              cpu: "100m"                                                   
+            limits:
+              memory: "128Mi"
+              cpu: "200m"
